@@ -16,7 +16,15 @@ namespace Chronos
 
             crono2.Start();
             Thread.Sleep(200);
+
+            crono1.Stop();
+            crono2.Stop();
+
+            double tempoC1 = crono1.Elapsed.TotalSeconds;
+            double tempoC2 = crono2.Elapsed.TotalSeconds;
             
+            Console.WriteLine($"{tempoC1:f3}");
+            Console.WriteLine($"{tempoC2:f3}");
         }
     }
 }
