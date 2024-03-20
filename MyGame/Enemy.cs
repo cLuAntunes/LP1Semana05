@@ -27,9 +27,7 @@ namespace MyGame
                 float damageStillToInflict = -shield;
                 shield = 0;
                 health -= damageStillToInflict;
-        
-            if (health < 0)
-                health = 0;
+                if (health < 0) health = 0;
             }
         }
 
