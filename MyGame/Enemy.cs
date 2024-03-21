@@ -8,7 +8,7 @@ namespace MyGame
 
         public Enemy (string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
@@ -17,6 +17,15 @@ namespace MyGame
         {       
             return name;
         }
+
+        public void SetName(string newName)
+        {
+            if (newName.Length > 8)
+                name = newName.Substring(0, 8);
+            else
+                name = newName;
+        }
+
 
         public void TakeDamage(float damage)
         {   
