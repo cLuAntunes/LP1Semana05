@@ -19,6 +19,11 @@ namespace MyGame
 
             foreach (Enemy enemy in allenemies)
             {
+                enemy.TakeDamage(38);
+                enemy.PickupPowerUp(PowerUp.Health, 25);
+                enemy.PickupPowerUp(PowerUp.Shield, 30);
+                enemy.TakeDamage(15);
+
                 Console.WriteLine($"{enemy.GetName()}" +
                     $" {enemy.GetHealth()} " +
                     $"{enemy.GetShield()}");
