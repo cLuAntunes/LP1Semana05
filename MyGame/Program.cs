@@ -28,7 +28,8 @@ namespace MyGame
                     $" {enemy.GetHealth()} " +
                     $"{enemy.GetShield()}");
             }
-        
+
+            Console.WriteLine(Enemy.GetTotalPowerUps());
 
         }
     }

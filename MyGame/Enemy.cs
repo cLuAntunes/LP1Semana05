@@ -2,9 +2,15 @@ namespace MyGame
 {
     public class Enemy
     {
+        private static int totalPowerUp;
         private string name;
         private float health;
         private float shield; 
+
+        static Enemy()
+        {
+            totalPowerUp = 0;
+        }
 
         public Enemy (string name)
         {
@@ -52,6 +58,8 @@ namespace MyGame
 
         public void PickupPowerUp(PowerUp powerUp, float value)
         {
+            totalPowerUp++;
+            
             if (powerUp == PowerUp.Health)
             {
                 health += value;
@@ -62,6 +70,11 @@ namespace MyGame
                 shield += value;
                 if (shield > 100) shield = 100;
             }
+        }
+
+        public static int GetTotalPowerUps()
+        {
+            return totalPowerUp;
         }
     }
 }
